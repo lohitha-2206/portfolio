@@ -1,0 +1,666 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    color: #ededed;
+    background: #081b29;
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: #051129;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo{
+    position: relative;
+    font-size: 25px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: default;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+}
+
+.navbar a{
+    display: inline-block;
+    font-size: 25px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+    opacity: 0;
+    animation: slideTop .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.navbar a:hover{
+    color: #0ef;
+}
+
+.home{
+    position: relative;
+    width: 100%;
+    justify-content: space-between;
+    height: 100vh;
+    background: url("images/lohitha.png") no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 70px 10% 0;
+}
+
+.home-content{
+    max-width: 600px;
+}
+
+.home-content h3{
+    font-size: 32px;
+    font-weight: 700;
+    opacity: 0;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: .7s;
+}
+
+.home-content h3:nth-last-of-type(2){
+    margin-bottom: 30px;
+    animation: slideTop 1s ease forwards;
+    animation-delay: .7s;
+}
+
+.home-content h3 span{
+    color: #0ef;
+}
+
+.home-content h1{
+    font-size: 56px;
+    font-weight: 700;
+    margin: -3px 0;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.home-content p{
+    font-size: 20px;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.icon-style img {
+    filter: brightness(0) invert(1);
+    /* makes SVGs white */
+    transition: 0.3s;
+}
+
+.icon-style img:hover {
+    filter: brightness(0) invert(0.6);
+    /* slightly gray on hover */
+}
+
+.home-sci a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #0ef;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #0ef;
+    text-decoration: none;
+    transition: .5s ease;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+    margin: 30px 15px 30px 0;
+}
+
+.home-sci a:hover{
+    background: #0ef;
+    color: #081b29;
+    box-shadow: 0 0 20px #0ef;
+}
+
+.btn-box{
+    display: inline-block;
+    padding: 12px 28px;
+    background: #0ef;
+    border-radius: 40px;
+    font-size: 16px;
+    color: #081b29;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 2s;
+    box-shadow: 0 0 5px #0ef,
+                0 0 25px #0ef;
+}
+
+.btn-box:hover{
+    box-shadow: 0 0 5px cyan,
+                0 0 25px cyan,
+                0 0 50px cyan,
+                0 0 100px cyan,
+                0 0 200px cyan;
+}
+
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* Full screen height */
+    padding: 0 10%;
+    background: #081b29;
+    text-align: center;
+}
+
+.about-text {
+    max-width: 800px;
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.3);
+    /* Optional: slight background for readability */
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 238, 255, 0.2);
+    opacity: 0;
+    transform: translateY(100px);
+        /* matches your slideTop */
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.about-text.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about-text h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: 0.5s;
+}
+
+.about-text h2 span {
+    color: #0ef;
+}
+
+.about-text p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 4rem;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 0.5s;
+}
+
+.container1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.radial-bars {
+    width: 180px;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    transition: transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.radial-bars.active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.8s ease-in-out;
+}
+
+.radial-bars svg {
+    width: 150px;
+    height: 150px;
+    transform: rotate(-90deg);
+}
+
+.progress-bar {
+    fill: none;
+    stroke: #222;
+    stroke-width: 15;
+}
+
+.path {
+    fill: none;
+    stroke: #0ef;
+    stroke-width: 15;
+    stroke-dasharray: 502;
+    stroke-dashoffset: 502;
+    transition: stroke-dashoffset 1.5s ease;
+}
+
+.percentage {
+    position: absolute;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #fff;
+    top: 80px;
+}
+
+.text {
+    margin-top: 10px;
+    font-weight: 600;
+    color: #fff;
+    /* Ensure it's visible */
+    font-size: 1.5rem;
+}
+
+.text {
+    color: #fff;
+    text-shadow: 0 0 4px #0ef;
+}
+
+.projects {
+    background: #081b29;
+    padding: 100px 10%;
+    color: #ededed;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 60px;
+    padding-bottom: 70px;
+    color: #ededed;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 0.2s;
+}
+
+.section-title span {
+    color: #0ef;
+}
+
+.project-container {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.project {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 20px #012290f7,
+        1px 1px 40px #0053b8f7;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s ease forwards;
+}
+
+.project:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+.project:nth-child(2) {
+    animation-delay: 0.6s;
+}
+
+.project:nth-child(3) {
+    animation-delay: 0.9s;
+}
+
+.project-text {
+    flex: 1;
+    max-width: 500px;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 0.5s;
+}
+
+.project-text h3 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: #0ef;
+}
+
+.project-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #ededed;
+}
+
+.project-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #0ef;
+    color: #081b29;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 30px;
+    box-shadow: 0 0 5px #0ef,
+        0 0 25px #0ef;
+    transition: 0.3s ease;
+}
+
+.project-btn:hover {
+    box-shadow: 0 0 5px cyan,
+        0 0 25px cyan,
+        0 0 50px cyan,
+        0 0 100px cyan;
+}
+
+.project-image {
+    flex: 1;
+    max-width: 400px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 238, 255, 0.3);
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: 0.5s;
+}
+
+.tech-icons {
+    margin-bottom: 15px;
+}
+
+.tech-icons i {
+    display: inline-block;
+    font-size: 24px;
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+    filter: brightness(0) invert(1);
+    transition: 0.3s;
+}
+
+.tech-icons i:hover {
+    filter: brightness(0) invert(0.6);
+}
+
+.project,
+.project-text,
+.project-image {
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.project.show,
+.project-text.show,
+.project-image.show {
+    animation: fadeInUp 1s ease forwards;
+}
+
+.project-text.show {
+    animation: slideLeft 1s ease forwards;
+}
+
+.project-image.show {
+    animation: slideRight 1s ease forwards;
+}
+
+#certifications {
+    color: aliceblue;
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 4rem;
+}
+
+.sub-title{
+    text-align: center;
+    font-size: 60px;
+    padding-bottom: 70px
+}
+
+.sub-title span{
+    color: #0ef;
+}
+
+.container {
+    padding: 90px;
+}
+
+.certifications-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 100px;
+    margin-top: 20px;
+}
+
+.certifications-list div {
+    background: transparent;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 13px;
+    border-radius: 20px;
+    transition: background 0.5s, transform 0.5s;
+    box-shadow: 1px 1px 20px #012290f7,
+        1px 1px 40px #0053b8f7;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s ease forwards;
+}
+
+.certifications-list div:hover {
+    background: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
+}
+
+.certifications-list div:active {
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
+}
+
+.certifications-list div:active {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #00f7ff;
+} 
+
+.certifications-list div:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+.certifications-list div:nth-child(2) {
+    animation-delay: 0.6s;
+}
+
+.certifications-list div:nth-child(3) {
+    animation-delay: 0.9s;
+}
+
+.certifications-list div:nth-child(4) {
+    animation-delay: 1.2s;
+}
+
+.certifications-list div:nth-child(5) {
+    animation-delay: 1.5s;
+}
+
+.certifications-list div:nth-child(6) {
+    animation-delay: 1.8s;
+}
+
+.cert {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.cert:hover {
+    transform: scale(1.05);
+}
+
+.certifications-list div img{
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+.certifications-list div h2{
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.contact {
+    background: #081b29;
+    padding: 100px 10%;
+    color: #ededed;
+    text-align: center;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 600px;
+    margin: auto;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s ease forwards;
+    animation-play-state: paused;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    background: transparent;
+    border: 2px solid #0ef;
+    border-radius: 10px;
+    color: #ededed;
+    font-size: 16px;
+    resize: none;
+    outline: none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #999;
+}
+
+.contact-btn {
+    padding: 12px;
+    background: #0ef;
+    color: #081b29;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 18px;
+    box-shadow: 0 0 5px #0ef,
+        0 0 25px #0ef;
+    transition: 0.3s;
+}
+
+.contact-btn:hover {
+    box-shadow: 0 0 5px cyan,
+        0 0 25px cyan,
+        0 0 50px cyan,
+        0 0 100px cyan;
+}
+
+.footer {
+    background: #081b29;
+    padding: 30px 10%;
+    text-align: center;
+    color: #ededed;
+    border-top: 1px solid rgba(0, 238, 255, 0.2);
+    box-shadow: 0 -1px 10px rgba(0, 238, 255, 0.1);
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 1.2s;
+}
+
+.footer-text p {
+    margin: 0;
+    font-size: 16px;
+    color: #ededed;
+    letter-spacing: 1px;
+}
+
+@keyframes slideRight{
+    0%{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft{
+    0%{
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideTop{
+    0%{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideBottom{
+    0%{
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
